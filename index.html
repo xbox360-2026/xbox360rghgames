@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogos Xbox 360 RGH</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #fff;
+        background-color: #000;
+        overflow-x: hidden;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(0,255,0,0.15) 0%, rgba(0,0,0,0.9) 80%);
+        animation: moveBg 10s linear infinite;
+        z-index: -1;
+    }
+
+    @keyframes moveBg {
+        0% { transform: translate(0, 0); }
+        50% { transform: translate(-25%, -25%); }
+        100% { transform: translate(0, 0); }
+    }
+
+    header {
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding: 30px 10px;
+        border-bottom: 2px solid #00ff00;
+    }
+
+    header img {
+        width: 200px;
+        display: block;
+        margin: 0 auto 10px auto;
+        filter: drop-shadow(0 0 15px #00ff00);
+    }
+
+    header h1 {
+        font-size: 2em;
+        color: #00ff00;
+        text-shadow: 0 0 15px #00ff00;
+        margin: 0;
+    }
+
+    nav {
+        background-color: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #00ff00;
+    }
+
+    nav a {
+        color: #00ff00;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #fff;
+        text-shadow: 0 0 10px #00ff00;
+    }
+
+    .content {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0,255,0,0.3);
+    }
+
+    /* --- Barra de Pesquisa --- */
+    .search-bar {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .search-bar input {
+        width: 80%;
+        max-width: 400px;
+        padding: 12px 15px;
+        border: 2px solid #00ff00;
+        border-radius: 8px;
+        background-color: #000;
+        color: #00ff00;
+        font-size: 1em;
+        outline: none;
+        box-shadow: 0 0 10px rgba(0,255,0,0.3);
+        transition: 0.3s;
+    }
+
+    .search-bar input:focus {
+        box-shadow: 0 0 20px #00ff00;
+    }
+
+    /* --- Posts --- */
+    .post {
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(0,255,0,0.3);
+    }
+
+    .post h2 {
+        color: #00ff00;
+        text-shadow: 0 0 10px #00ff00;
+    }
+
+    .post p {
+        line-height: 1.6;
+    }
+
+    .download-btn {
+        display: inline-block;
+        padding: 12px 25px;
+        margin-top: 10px;
+        background: linear-gradient(90deg, #00ff00, #006600);
+        color: #000;
+        font-weight: bold;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 0 15px #00ff00;
+    }
+
+    .download-btn:hover {
+        background: linear-gradient(90deg, #00cc00, #003300);
+        color: #fff;
+        box-shadow: 0 0 25px #00ff00;
+    }
+
+    .game-img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+        margin: 15px 0;
+        box-shadow: 0 0 15px rgba(0,255,0,0.3);
+        transition: 0.3s;
+    }
+
+    .game-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(0,255,0,0.6);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0,0,0,0.8);
+        border-top: 2px solid #00ff00;
+        color: #00ff00;
+        margin-top: 40px;
+        text-shadow: 0 0 10px #00ff00;
+    }
+
+    #contador {
+        display: block;
+        margin-top: 10px;
+        font-size: 1.1em;
+        color: #00ff00;
+        text-shadow: 0 0 10px #00ff00;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="https://i.postimg.cc/bvskdXJ2/images-7.jpg" alt="Logo Xbox 360">
+    <h1>Jogos Xbox 360 RGH</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#jogos">Jogos</a>
+    <a href="#">Dashboards</a>
+    <a href="#">Apps</a>
+    <a href="#">Contato</a>
+</nav>
+
+<div id="jogos" class="content">
+    <!-- Barra de Pesquisa -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Pesquisar jogo...">
+    </div>
+
+    <!-- Lista de Jogos -->
+    <div class="post">
+        <h2>GTA 5 Xbox 360 RGH</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" alt="GTA 5 Xbox 360" class="game-img">
+        <p>Versão completa do GTA V para Xbox 360 RGH — inclui Disco 1 e Disco 2.<br>Senha para extrair: <b>TriploPlayBR</b></p>
+        <a href="https://suaurl.com/d366c8" class="download-btn">Disco 1</a>
+        <a href="https://suaurl.com/c40555" class="download-btn">Disco 2</a>
+    </div>
+
+    <div class="post">
+        <h2>Skate 3</h2>
+        <img src="https://i.postimg.cc/NMC6pgnc/images-5.jpg" alt="Skate 3 Xbox 360" class="game-img">
+        <p>Skate 3 completo para Xbox 360 RGH.<br>Senha para extrair: <b>TriploPlayBR</b></p>
+        <a href="https://suaurl.com/fa3c05" class="download-btn">Baixar Agora</a>
+    </div>
+
+    <div class="post">
+        <h2>GTA 4</h2>
+        <img src="https://i.postimg.cc/T3QXkFT9/images-2.jpg" alt="GTA 4 Xbox 360" class="game-img">
+        <p>Baixe GTA IV completo para Xbox 360 RGH.</p>
+        <a href="https://suaurl.com/44327c" class="download-btn">Baixar Agora</a>
+    </div>
+
+    <div class="post">
+        <h2>Far Cry 4™ Complete Edition</h2>
+        <img src="https://i.postimg.cc/jdFHzd7s/71g-Fi740-Lz-L-AC-UF1000-1000-QL80.jpg" alt="Far Cry 4 Xbox 360" class="game-img">
+        <p>Far Cry 4 edição completa para Xbox 360 RGH.</p>
+        <a href="https://suaurl.com/d366c8" class="download-btn">Baixar Agora</a>
+    </div>
+
+    <div class="post">
+        <h2>Let's Sing and Dance</h2>
+        <img src="https://i.postimg.cc/sxz6CfcM/91cs-IUCh-Lb-L.jpg" alt="Let's Sing and Dance Xbox 360" class="game-img">
+        <p>Divirta-se com Let's Sing and Dance para Xbox 360 Kinect.</p>
+        <a href="https://suaurl.com/7736ac" class="download-btn">Baixar Agora</a>
+    </div>
+
+    <div class="post">
+        <h2>Saints Row 2</h2>
+        <img src="https://i.postimg.cc/W31zWgBK/Sr2-cover.jpg" alt="Saints Row 2 Xbox 360" class="game-img">
+        <p>Baixe Saints Row 2 completo para Xbox 360 RGH.</p>
+        <a href="https://suaurl.com/8ad8a1" class="download-btn">Baixar Agora</a>
+    </div>
+
+    <div class="post">
+        <h2>Minecraft Xbox 360 Edition</h2>
+        <img src="https://i.postimg.cc/d0pQBp9V/images-3.jpg" alt="Minecraft Xbox 360" class="game-img">
+        <p>Versão clássica de Minecraft para Xbox 360 RGH.</p>
+        <a href="https://suaurl.com/504f43" class="download-btn">Baixar Agora</a>
+    </div>
+
+    <div class="post">
+        <h2>Medal of Honor</h2>
+        <img src="https://i.postimg.cc/508Jm00D/71g-Vi-MR7n-NL-SL1080.jpg" alt="Medal of Honor Xbox 360" class="game-img">
+        <p>Medal of Honor edição completa para Xbox 360 RGH.</p>
+        <a href="https://suaurl.com/5a7b0e" class="download-btn">Baixar Agora</a>
+    </div>
+
+    <div class="post">
+        <h2>Resident Evil 5</h2>
+        <img src="https://i.postimg.cc/Y9NcWsDg/images-4.jpg" alt="Resident Evil 5 Xbox 360" class="game-img">
+        <p>Resident Evil 5 completo para Xbox 360 RGH.</p>
+        <a href="https://suaurl.com/197af5" class="download-btn">Baixar Agora</a>
+    </div>
+
+    <div class="post">
+        <h2>FIFA 19</h2>
+        <img src="https://i.postimg.cc/hPdWBhcR/images-1.jpg" alt="FIFA 19 Xbox 360" class="game-img">
+        <p>Baixe o FIFA 19 completo para Xbox 360 RGH.<br>Senha para extrair: <b>TriploPlayBR</b></p>
+        <a href="https://suaurl.com/d16aef" class="download-btn">Baixar Agora</a>
+    </div>
+
+    <div class="post">
+        <h2>PES 2018</h2>
+        <img src="https://i.postimg.cc/85748JM8/images-6.jpg" alt="PES 2018 Xbox 360" class="game-img">
+        <p>PES 2018 completo para Xbox 360 RGH.<br>Senha para extrair: <b>TriploPlayBR</b></p>
+        <a href="https://suaurl.com/00ca27" class="download-btn">Baixar Agora</a>
+    </div>
+</div>
+
+<footer>
+    © <span id="ano"></span> Jogos Xbox 360 RGH - Todos os direitos reservados.
+    <span id="contador"></span>
+</footer>
+
+<!-- Script da Pesquisa + Contador -->
+<script>
+// --- Barra de Pesquisa ---
+document.getElementById("searchInput").addEventListener("keyup", function() {
+    const input = this.value.toLowerCase();
+    const posts = document.querySelectorAll(".post");
+    posts.forEach(post => {
+        const title = post.querySelector("h2").textContent.toLowerCase();
+        post.style.display = title.includes(input) ? "" : "none";
+    });
+});
+
+// --- Atualiza o ano automaticamente ---
+document.getElementById("ano").textContent = new Date().getFullYear();
+
+// --- Contador de visitas local (navegador) ---
+let visitas = localStorage.getItem("visitas");
+if (!visitas) visitas = 0;
+visitas++;
+localStorage.setItem("visitas", visitas);
+document.getElementById("contador").textContent = `👀 Visitas neste navegador: ${visitas}`;
+</script>
+
+</body>
+</html>

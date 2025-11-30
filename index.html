@@ -1,112 +1,156 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Site em Edição</title>
-  <style>
-    :root{--bg:#0a0a0a;--card:#111;--accent:#00d000;--muted:#b5b5b5}
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-      background: radial-gradient(900px 450px at 20% 10%, rgba(0,255,0,0.12), transparent),
-                  radial-gradient(700px 300px at 90% 80%, rgba(0,180,0,0.08), transparent),
-                  var(--bg);
-      color:#e6eef8;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-    }
-    .card{
-      width:100%;
-      max-width:820px;
-      background:linear-gradient(180deg, rgba(0,255,0,0.07), rgba(255,255,255,0.01));
-      border:1px solid rgba(0,255,0,0.15);
-      border-radius:20px;
-      padding:36px;
-      box-shadow:0 10px 30px rgba(0,255,0,0.25);
-      text-align:center;
-    }
-    h1{
-      margin:0 0 12px 0;
-      font-size:clamp(22px,4vw,40px);
-      letter-spacing:-0.02em;
-      color:var(--accent);
-      text-shadow:0 0 12px rgba(0,255,0,0.5);
-    }
-    p.lead{
-      margin:0 0 20px 0;
-      color:var(--muted);
-      font-size:clamp(14px,2.2vw,18px);
-    }
-    .status{
-      display:inline-block;
-      padding:12px 22px;
-      border-radius:999px;
-      background:rgba(0,255,0,0.15);
-      color:var(--accent);
-      font-weight:700;
-      letter-spacing:0.05em;
-      box-shadow:0 6px 18px rgba(0,255,0,0.25);
-      animation:pulse 2.4s infinite;
-      text-transform:uppercase;
-    }
-    @keyframes pulse{
-      0%{transform:scale(1); opacity:1}
-      50%{transform:scale(1.05); opacity:0.88}
-      100%{transform:scale(1); opacity:1}
-    }
-    footer{
-      margin-top:22px;
-      color:rgba(200,200,200,0.5);
-      font-size:13px;
-    }
-    @media (max-width:420px){.card{padding:22px}}
-.telegram-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      margin-top:25px;
-      background:#34AADF;
-      color:#fff;
-      padding:12px 20px;
-      border-radius:50px;
-      font-weight:600;
-      text-decoration:none;
-      font-size:16px;
-      box-shadow:0 6px 18px rgba(0,150,255,0.35);
-      transition:0.25s;
-    }
-    .telegram-btn:hover{
-      transform:scale(1.06);
-      box-shadow:0 8px 26px rgba(0,150,255,0.50);
-    }
-    .tg-icon{display:flex;align-items:center;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tarefa Disponível</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e5e5e5; /* Cinza claro estilo Xbox */
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+        .container {
+            max-width: 760px;
+            margin: 36px auto;
+            background: white;
+            padding: 26px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.12);
+            border-left: 6px solid #107C10; /* Verde Xbox */
+        }
+        .logo-area {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+        .xbox-circle {
+            width: 72px;
+            height: 72px;
+            margin: auto;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffffff 38%, #107C10 78%);
+            box-shadow: 0 6px 18px rgba(16,124,16,0.12);
+        }
+        h1 {
+            text-align: center;
+            color: #107C10; /* Verde Xbox */
+            font-size: 30px;
+            margin: 14px 0 8px 0;
+            font-weight: 700;
+        }
+        p {
+            font-size: 18px;
+            line-height: 28px;
+            color: #222;
+            margin: 0 0 14px 0;
+        }
+        .step {
+            background: #f7f7f7;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #e2e2e2;
+        }
+        .link-btn {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            background: #107C10; /* Botão verde Xbox */
+            padding: 16px;
+            color: white;
+            text-decoration: none;
+            font-size: 19px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: background 0.18s;
+        }
+        .link-btn:hover {
+            background: #0d5f0c;
+        }
+        .secondary-btn {
+            display: inline-block;
+            text-align: center;
+            margin-top: 12px;
+            background: #ffffff;
+            padding: 12px 16px;
+            color: #107C10;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 10px;
+            font-weight: 700;
+            border: 2px solid #107C10;
+            transition: background 0.12s, color 0.12s;
+        }
+        .secondary-btn:hover {
+            background: #107C10;
+            color: #fff;
+        }
+        .note {
+            font-size: 15px;
+            color: #444;
+            margin-top: 8px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-  <main class="card">
-    <h1>Xbox 360 — Site em Edição</h1>
-    <p class="lead">Desculpe o transtorno — estamos fazendo melhorias e voltaremos em breve com novidades.</p>
 
-    <div class="status">Editando Agora</div>
+    <div class="container">
 
-    <footer>
-      <div>Se precisar falar com a gente, envie uma mensagem.</div>
-          <br><br>
-      <a href="https://t.me/xbox360rghgames" target="_blank" class="telegram-btn">
-        <span class="tg-icon">
-          <svg width="22" height="22" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="120" cy="120" r="120" fill="#34AADF"/>
-            <path d="M179 69L158 174c-1 6-5 7-10 4l-47-35-23 22c-2 2-4 3-8 3l3-48 87-55c4-2-1-4-6-2l-107 41-46-15c-10-3-10-9 2-13l177-68c8-3 15 2 12 14z" fill="#fff"/>
-          </svg>
-        </span>
-        CONTATO
-      </a>
-    </footer>
-  </main>
+        <div class="logo-area">
+            <div class="xbox-circle" aria-hidden="true"></div>
+        </div>
+
+        <h1>Tarefa do Dia</h1>
+
+        <p><strong>Instruções passo a passo:</strong></p>
+
+        <div class="step">
+            <strong>1.</strong> Abra a <strong>Google Play Store</strong> e pesquise por <strong>TikTok Lite</strong>.
+        </div>
+
+        <div class="step">
+            <strong>2.</strong> Instale o aplicativo e <strong>crie uma conta nova</strong> no TikTok Lite (siga o processo de criação — e-mail, telefone ou opção sugerida pelo app).
+            <div class="note">Dica: anote o e-mail/usuário criado para referência.</div>
+        </div>
+
+        <div class="step">
+            <strong>3.</strong> Após criar a conta, clique no botão abaixo para abrir a tarefa no TikTok.
+        </div>
+
+        <!-- BOTÃO PRINCIPAL: LINK DA TAREFA -->
+        <a class="link-btn" href="https://vm.tiktok.com/ZSHTQjU63GSjB-iWKtX/" target="_blank" rel="noopener noreferrer">
+            Acessar Tarefa no TikTok Lite
+        </a>
+
+        <div style="height:10px"></div>
+
+        <div class="step">
+            <strong>4.</strong> Faça uma <strong>captura de tela</strong> (screenshot) mostrando que você criou a conta e abriu o link.
+        </div>
+
+        <div class="step">
+            <strong>5.</strong> Envie a captura de tela no grupo do Telegram:
+            <div style="margin-top:10px;">
+                <!-- Substitua o placeholder abaixo pelo link do grupo do Telegram -->
+                <a class="secondary-btn" href="https://t.me/xbox360rghgames" target="_blank" rel="noopener noreferrer">
+                    Enviar captura no grupo do Telegram
+                </a>
+            </div>
+            <div class="note"> <code></code> </div>
+        </div>
+
+        <footer>
+            Precisa de ajuda? Abra o Telegram e envie uma mensagem para o administrador do grupo.
+        </footer>
+    </div>
+
 </body>
 </html>

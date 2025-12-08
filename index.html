@@ -1,155 +1,147 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Tarefa Disponível</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa do Grupo</title>
+
+    <!-- FONTE PREMIUM -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #e5e5e5; /* Cinza claro estilo Xbox */
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1b1b1b);
+            color: #fff;
             margin: 0;
             padding: 0;
-            font-size: 18px;
+            overflow-x: hidden;
         }
+
+        header {
+            background: linear-gradient(90deg, #0A84FF, #0077e6);
+            padding: 25px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px #005fcc88;
+        }
+
         .container {
-            max-width: 760px;
-            margin: 36px auto;
-            background: white;
-            padding: 26px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.12);
-            border-left: 6px solid #107C10; /* Verde Xbox */
+            padding: 20px;
         }
-        .logo-area {
-            text-align: center;
-            margin-bottom: 18px;
+
+        /* CARTÕES VIDRO GLASS */
+        .card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 22px;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 0 18px #00000066;
+            transition: 0.25s ease;
         }
-        .xbox-circle {
-            width: 72px;
-            height: 72px;
-            margin: auto;
-            border-radius: 50%;
-            background: radial-gradient(circle, #ffffff 38%, #107C10 78%);
-            box-shadow: 0 6px 18px rgba(16,124,16,0.12);
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 22px #0A84FF55;
         }
-        h1 {
-            text-align: center;
-            color: #107C10; /* Verde Xbox */
-            font-size: 30px;
-            margin: 14px 0 8px 0;
-            font-weight: 700;
-        }
-        p {
-            font-size: 18px;
-            line-height: 28px;
-            color: #222;
-            margin: 0 0 14px 0;
-        }
-        .step {
-            background: #f7f7f7;
-            padding: 12px 14px;
-            border-radius: 10px;
-            margin-bottom: 12px;
-            border: 1px solid #e2e2e2;
-        }
-        .link-btn {
+
+        /* BOTÕES */
+        .btn-img {
             display: block;
-            text-align: center;
-            margin-top: 18px;
-            background: #107C10; /* Botão verde Xbox */
-            padding: 16px;
-            color: white;
-            text-decoration: none;
-            font-size: 19px;
-            border-radius: 10px;
-            font-weight: 700;
-            transition: background 0.18s;
+            width: 50px; /* TAMANHO PEDIDO */
+            height: 50px;
+            margin: auto;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 14px;
+            transition: 0.25s;
         }
-        .link-btn:hover {
-            background: #0d5f0c;
+
+        .btn-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        .secondary-btn {
-            display: inline-block;
-            text-align: center;
-            margin-top: 12px;
-            background: #ffffff;
-            padding: 12px 16px;
-            color: #107C10;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 10px;
-            font-weight: 700;
-            border: 2px solid #107C10;
-            transition: background 0.12s, color 0.12s;
+
+        .btn-img:hover {
+            transform: scale(1.18);
+            filter: brightness(1.2);
         }
-        .secondary-btn:hover {
-            background: #107C10;
-            color: #fff;
+
+        h2 {
+            font-weight: 600;
+            margin-top: 0;
+            color: #0A84FF;
         }
-        .note {
+
+        ul {
+            padding-left: 20px;
+            line-height: 1.7;
+        }
+
+        .step {
+            margin-bottom: 14px;
+            padding-left: 12px;
+            border-left: 3px solid #0A84FF;
             font-size: 15px;
-            color: #444;
-            margin-top: 8px;
         }
-        footer {
+
+        .center {
             text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
         }
     </style>
 </head>
 <body>
 
+    <header>Tarefa Obrigatória</header>
+
     <div class="container">
 
-        <div class="logo-area">
-            <div class="xbox-circle" aria-hidden="true"></div>
+        <div class="card">
+            <h2>📌 Sua Tarefa</h2>
+            <p style="font-size: 15px; opacity: .9;">
+                Para liberar seus jogos, você precisa completar a tarefa abaixo:
+            </p>
+
+            <ul>
+                <li>Baixar o APK</li>
+                <li>Criar sua conta dentro do app</li>
+                <li>Enviar a captura da conta criada no grupo</li>
+            </ul>
         </div>
 
-        <h1>Tarefa do Dia 05/12/2025</h1>
+        <div class="card center">
+            <h2>⬇️ Baixar o APK</h2>
 
-        <p><strong>Instruções passo a passo:</strong></p>
-
-        <div class="step">
-            <strong>1.</strong> Abra a <strong>Google Play Store</strong> e pesquise por <strong>TikTok Lite</strong>.
+            <a class="btn-img" href="https://nflix.cc/4YUvVI7C">
+                <img src="https://i.postimg.cc/pdGWXNJd/images-(1).jpg" alt="Baixar APK">
+            </a>
         </div>
 
-        <div class="step">
-            <strong>2.</strong> Instale o aplicativo e <strong>crie uma conta nova</strong> no TikTok Lite (siga o processo de criação — e-mail, telefone ou opção sugerida pelo app).
-            <div class="note">Dica: anote o e-mail/usuário criado para referência.</div>
+        <div class="card center">
+            <h2>📲 Grupo do Telegram</h2>
+
+            <a class="btn-img" href="https://t.me/+82Bk_hx0V6llYzFh">
+                <img src="https://i.postimg.cc/bYbh4SWZ/images-(2).png" alt="Telegram">
+            </a>
         </div>
 
-        <div class="step">
-            <strong>3.</strong> Após criar a conta, clique no botão abaixo para abrir a tarefa no TikTok.
+        <div class="card">
+            <h2>📘 Tutorial passo a passo</h2>
+
+            <div class="step">1️⃣ Clique no botão e baixe o APK.</div>
+            <div class="step">2️⃣ Instale o aplicativo no seu celular.</div>
+            <div class="step">3️⃣ Abra o app e toque em <b>Criar Conta</b>.</div>
+            <div class="step">4️⃣ Complete o cadastro.</div>
+            <div class="step">5️⃣ Tire uma captura mostrando a conta criada.</div>
+            <div class="step">6️⃣ Envie no grupo do Telegram.</div>
         </div>
 
-        <!-- BOTÃO PRINCIPAL: LINK DA TAREFA -->
-        <a class="link-btn" href="https://www.tiktok.com/d/4/ZSHTK1tPTAYEm-gOTSr/" target="_blank" rel="noopener noreferrer">
-            Acessar Tarefa no TikTok Lite
-        </a>
-
-        <div style="height:10px"></div>
-
-        <div class="step">
-            <strong>4.</strong> uma <strong>captura de tela</strong> (screenshot) mostrando que você criou a conta e abriu o link.
-        </div>
-
-        <div class="step">
-            <strong>5.</strong> Envie a captura de tela no grupo do Telegram para ganhar seu prêmio:
-            <div style="margin-top:10px;">
-                <!-- Substitua o placeholder abaixo pelo link do grupo do Telegram -->
-                <a class="secondary-btn" href="https://t.me/+82Bk_hx0V6llYzFh" target="_blank" rel="noopener noreferrer">
-                    Enviar captura no grupo do Telegram
-                </a>
-            </div>
-            <div class="note"> <code></code> </div>
-        </div>
-
-        <footer>
-            Precisa de ajuda? Abra o Telegram e envie uma mensagem para o administrador do grupo.
-        </footer>
     </div>
 
 </body>

@@ -1,148 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarefa do Grupo</title>
-
-    <!-- FONTE PREMIUM -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a, #1b1b1b);
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        header {
-            background: linear-gradient(90deg, #0A84FF, #0077e6);
-            padding: 25px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            box-shadow: 0 0 20px #005fcc88;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        /* CARTÕES VIDRO GLASS */
-        .card {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 22px;
-            border-radius: 18px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 0 18px #00000066;
-            transition: 0.25s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 0 22px #0A84FF55;
-        }
-
-        /* BOTÕES */
-        .btn-img {
-            display: block;
-            width: 50px; /* TAMANHO PEDIDO */
-            height: 50px;
-            margin: auto;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-top: 14px;
-            transition: 0.25s;
-        }
-
-        .btn-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .btn-img:hover {
-            transform: scale(1.18);
-            filter: brightness(1.2);
-        }
-
-        h2 {
-            font-weight: 600;
-            margin-top: 0;
-            color: #0A84FF;
-        }
-
-        ul {
-            padding-left: 20px;
-            line-height: 1.7;
-        }
-
-        .step {
-            margin-bottom: 14px;
-            padding-left: 12px;
-            border-left: 3px solid #0A84FF;
-            font-size: 15px;
-        }
-
-        .center {
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | xbox360rghgames.shop</title>
+  <style>
+    * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+    .login-box {
+      background: #111;
+      padding: 30px;
+      width: 340px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background: #00ff88;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .login-box button:hover {
+      background: #00cc6e;
+    }
+    .msg {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
+  <div class="login-box">
+    <h2>Login com E-mail</h2>
+    <input type="email" id="email" placeholder="E-mail" />
+    <input type="password" id="pass" placeholder="Senha" />
+    <button onclick="login()">Entrar</button>
+    <div class="msg" id="msg"></div>
+  </div>
 
-    <header>Tarefa Obrigatória</header>
+  <script>
+    function login() {
+      const email = document.getElementById('email').value;
+      const pass  = document.getElementById('pass').value;
+      const msg   = document.getElementById('msg');
 
-    <div class="container">
+      if (email === '' || pass === '') {
+        msg.innerText = 'Preencha todos os campos.';
+        msg.style.color = 'orange';
+        return;
+      }
 
-        <div class="card">
-            <h2>📌 Sua Tarefa</h2>
-            <p style="font-size: 15px; opacity: .9;">
-                Para liberar seus jogos, você precisa completar a tarefa abaixo:
-            </p>
+      if (!email.includes('@')) {
+        msg.innerText = 'Digite um e-mail válido.';
+        msg.style.color = 'orange';
+        return;
+      }
 
-            <ul>
-                <li>Baixar o APK</li>
-                <li>Criar sua conta dentro do app</li>
-                <li>Enviar a captura da conta criada no grupo</li>
-            </ul>
-        </div>
-
-        <div class="card center">
-            <h2>⬇️ Baixar o APK</h2>
-
-            <a class="btn-img" href="https://nflix.cc/4YUvVI7C">
-                <img src="https://i.postimg.cc/pdGWXNJd/images-(1).jpg" alt="Baixar APK">
-            </a>
-        </div>
-
-        <div class="card center">
-            <h2>📲 Grupo do Telegram</h2>
-
-            <a class="btn-img" href="https://t.me/+82Bk_hx0V6llYzFh">
-                <img src="https://i.postimg.cc/bYbh4SWZ/images-(2).png" alt="Telegram">
-            </a>
-        </div>
-
-        <div class="card">
-            <h2>📘 Tutorial passo a passo</h2>
-
-            <div class="step">1️⃣ Clique no botão e baixe o APK.</div>
-            <div class="step">2️⃣ Instale o aplicativo no seu celular.</div>
-            <div class="step">3️⃣ Abra o app e toque em <b>Criar Conta</b>.</div>
-            <div class="step">4️⃣ Complete o cadastro.</div>
-            <div class="step">5️⃣ Tire uma captura mostrando a conta criada.</div>
-            <div class="step">6️⃣ Envie no grupo do Telegram.</div>
-        </div>
-
-    </div>
-
+      // Login de demonstração (local)
+      if (email === 'admin@xbox360rghgames.shop' && pass === '1234') {
+        msg.innerText = 'Login realizado com sucesso!';
+        msg.style.color = '#00ff88';
+      } else {
+        msg.innerText = 'E-mail ou senha incorretos.';
+        msg.style.color = 'red';
+      }
+    }
+  </script>
 </body>
 </html>

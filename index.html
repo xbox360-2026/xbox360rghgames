@@ -1,132 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Área Restrita</title>
-<style>
-body {
-    background:#0f172a;
-    font-family:Arial;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-}
-.box {
-    background:#020617;
-    padding:25px;
-    border-radius:10px;
-    width:320px;
-}
-input, button {
-    width:100%;
-    padding:10px;
-    margin-top:10px;
-}
-button {
-    background:#22c55e;
-    border:none;
-    cursor:pointer;
-}
-.hidden {
-    display:none;
-}
-.error {
-    color:#f87171;
-    margin-top:10px;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Xbox 360 RGH Games</title>
+
+  <meta name="description" content="Catálogo de jogos e conteúdo para Xbox 360 RGH. Pesquise, veja destaques e fale conosco." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://xbox360rghgames.shop/" />
+
+  <meta property="og:title" content="Xbox 360 RGH Games" />
+  <meta property="og:description" content="Catálogo de jogos e conteúdo para Xbox 360 RGH." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://xbox360rghgames.shop/" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <header class="header">
+    <div class="container header-row">
+      <div class="brand">
+        <div class="logo">X360</div>
+        <div>
+          <div class="brand-title">Xbox 360 RGH Games</div>
+          <div class="brand-sub">Catálogo • Destaques • Contato</div>
+        </div>
+      </div>
 
-<div class="box" id="loginBox">
-    <h2>Login Seguro</h2>
+      <nav class="nav">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#destaques">Destaques</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- honeypot -->
-    <input type="text" id="email_fake" class="hidden">
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Seu catálogo de conteúdo para Xbox 360 RGH</h1>
+          <p class="lead">
+            Pesquise no catálogo, veja os destaques e chame no WhatsApp para tirar dúvidas.
+          </p>
 
-    <input type="text" id="u">
-    <input type="password" id="p">
-    <input type="hidden" id="token">
+          <div class="hero-actions">
+            <a class="btn" href="#catalogo">Ver catálogo</a>
+            <a class="btn btn-ghost" href="#contato">Falar agora</a>
+          </div>
 
-    <button onclick="login()">Entrar</button>
-    <div class="error" id="msg"></div>
-</div>
+          <div class="hero-note">
+            <strong>Aviso:</strong> este site é um modelo. Você pode adaptar para seu uso legítimo (ex.: serviços, acessórios, manutenção, mídia própria).
+          </div>
+        </div>
 
-<div class="box hidden" id="home">
-    <h2>Bem-vindo</h2>
-    <p>Acesso autorizado</p>
-</div>
+        <div class="hero-card">
+          <div class="hero-card-title">Busca rápida</div>
+          <label class="label" for="search">Pesquisar</label>
+          <input id="search" class="input" type="search" placeholder="Digite um nome..." />
+          <div class="small">Dica: tente “Halo”, “Forza”, “Gears”…</div>
+          <div class="chips">
+            <button class="chip" data-chip="Ação">Ação</button>
+            <button class="chip" data-chip="Corrida">Corrida</button>
+            <button class="chip" data-chip="RPG">RPG</button>
+            <button class="chip" data-chip="Coop">Coop</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script>
-/* ===== CONFIGURAÇÃO ===== */
-const usuarios = {
-    "admin": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4", // 1234
-    "joao":  "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f"  // senha
-};
+    <section id="destaques" class="section">
+      <div class="container">
+        <h2>Destaques</h2>
+        <p class="muted">Uma vitrine para os itens mais procurados.</p>
 
-let tentativas = 3;
-const tempoMinimo = 2000; // 2 segundos
-const inicio = Date.now();
+        <div class="grid" id="featuredGrid"></div>
+      </div>
+    </section>
 
-/* ===== TOKEN ===== */
-const tokenGerado = Math.random().toString(36).substring(2);
-document.getElementById("token").value = tokenGerado;
+    <section id="catalogo" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Catálogo</h2>
+            <p class="muted">Use a busca para filtrar. (Você edita a lista no <code>script.js</code>.)</p>
+          </div>
+          <div class="count" id="count"></div>
+        </div>
 
-/* ===== CAMPOS DINÂMICOS ===== */
-document.getElementById("u").placeholder = "Usuário";
-document.getElementById("p").placeholder = "Senha";
+        <div class="grid" id="catalogGrid"></div>
+      </div>
+    </section>
 
-/* ===== FUNÇÃO HASH ===== */
-async function sha256(texto) {
-    const data = new TextEncoder().encode(texto);
-    const hash = await crypto.subtle.digest("SHA-256", data);
-    return Array.from(new Uint8Array(hash))
-        .map(b => b.toString(16).padStart(2, '0'))
-        .join('');
-}
+    <section id="contato" class="section">
+      <div class="container contact">
+        <div>
+          <h2>Contato</h2>
+          <p class="muted">
+            Coloque aqui seus canais oficiais. (WhatsApp/Telegram/Email)
+          </p>
 
-/* ===== LOGIN ===== */
-async function login() {
-    const agora = Date.now();
-    const msg = document.getElementById("msg");
+          <div class="contact-cards">
+            <a class="contact-card" href="https://wa.me/5599999999999" target="_blank" rel="noreferrer">
+              <div class="icon">WA</div>
+              <div>
+                <div class="contact-title">WhatsApp</div>
+                <div class="muted">Clique para conversar</div>
+              </div>
+            </a>
 
-    if (document.getElementById("email_fake").value !== "") {
-        msg.innerText = "Acesso negado";
-        return;
-    }
+            <a class="contact-card" href="https://t.me/seuusuario" target="_blank" rel="noreferrer">
+              <div class="icon">TG</div>
+              <div>
+                <div class="contact-title">Telegram</div>
+                <div class="muted">@seuusuario</div>
+              </div>
+            </a>
 
-    if (agora - inicio < tempoMinimo) {
-        msg.innerText = "Aguarde alguns segundos";
-        return;
-    }
+            <a class="contact-card" href="mailto:contato@xbox360rghgames.shop">
+              <div class="icon">@</div>
+              <div>
+                <div class="contact-title">Email</div>
+                <div class="muted">contato@xbox360rghgames.shop</div>
+              </div>
+            </a>
+          </div>
+        </div>
 
-    if (tentativas <= 0) {
-        msg.innerText = "Acesso bloqueado";
-        return;
-    }
+        <form class="form" onsubmit="return false;">
+          <h3>Mensagem rápida</h3>
+          <label class="label">Seu nome</label>
+          <input class="input" id="name" placeholder="Ex.: João" />
 
-    const user = document.getElementById("u").value;
-    const pass = document.getElementById("p").value;
-    const token = document.getElementById("token").value;
+          <label class="label">Mensagem</label>
+          <textarea class="input" id="msg" rows="5" placeholder="Ex.: Quero informações sobre..."></textarea>
 
-    if (!token) {
-        msg.innerText = "Sessão inválida";
-        return;
-    }
+          <button class="btn" id="sendBtn">Enviar no WhatsApp</button>
+          <div class="small muted">O botão abre o WhatsApp com a mensagem preenchida.</div>
+        </form>
+      </div>
+    </section>
+  </main>
 
-    const passHash = await sha256(pass);
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Xbox 360 RGH Games</div>
+      <div class="muted">Feito com HTML • CSS • JS</div>
+    </div>
+  </footer>
 
-    if (usuarios[user] === passHash) {
-        document.getElementById("loginBox").classList.add("hidden");
-        document.getElementById("home").classList.remove("hidden");
-    } else {
-        tentativas--;
-        msg.innerText = "Erro. Tentativas restantes: " + tentativas;
-    }
-}
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
